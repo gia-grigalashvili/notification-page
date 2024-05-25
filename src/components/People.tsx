@@ -1,7 +1,9 @@
-/* eslint-disable react/prop-types */
 import styled from "styled-components";
-
-function People({ item, setnotifications }) {
+type notificationprops = {
+  setnotifications: React.Dispatch<React.SetStateAction<Notification[]>>;
+  item: Notification[];
+};
+function People({ item, setnotifications }: notificationprops) {
   const handleClick = () => {
     setnotifications((prevNotifications) => {
       const updatedNotifications = prevNotifications.map((notification) => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function Headers({ count, notifications, setnotifications }) {
+function Headers({ notifications, setnotifications }) {
   function mark(prevNotifications) {
     setnotifications((prevNotifications) => {
       const updatedNotifications = prevNotifications.map((notification) => {

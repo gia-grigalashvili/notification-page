@@ -5,11 +5,24 @@ import styled from "styled-components";
 import Headers from "./components/Headers";
 import People from "./components/People";
 import data from "./data.json";
-
+type Notification = {
+  id: number;
+  senderName: string;
+  profilePic: string;
+  action: string;
+  post: string;
+  time: string;
+  isUnread: boolean;
+  text?: string;
+  groupName?: string;
+  userPicture?: string;
+};
 function App() {
   console.log(data);
 
-  const [notifications, setnotifications] = useState(data.notifications);
+  const [notifications, setnotifications] = useState<Notification[]>(
+    data.notifications
+  );
 
   return (
     <MainConteiner>
